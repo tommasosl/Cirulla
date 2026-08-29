@@ -43,6 +43,10 @@
       -webkit-user-select: none;
       user-select: none;
       font-family: 'Inter', sans-serif;
+      -webkit-padding-start: 0;
+      -webkit-padding-end: 0;
+      -webkit-margin-start: 0;
+      -webkit-margin-end: 0;
     }
 
     .cirulla-score { font-family: 'Bebas Neue', 'Inter', sans-serif; letter-spacing: 0.02em; }
@@ -468,7 +472,7 @@
                   <ToggleCell label="Carte" iconName="layers" active={red.carte} showValue={false} accent={RED_ACCENT} disabled={blue.carte} onClick={() => toggle("red", "carte")} />
                 </div>
               </div>
-              <div className="flex flex-col items-center pt-1" style={{ paddingBottom: "max(env(safe-area-inset-top),16px)" }}>
+              <div className="flex flex-col items-center pt-1" style={{ paddingBottom: 0 }}>
                 <span className="text-[14px] font-extrabold tracking-[0.35em]" style={{ color: "#FBE4C8" }}>ROSSO</span>
               </div>
             </div>
