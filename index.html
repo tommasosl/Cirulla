@@ -20,7 +20,7 @@
   </script>
 
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Cirulla">
 
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
@@ -501,7 +501,7 @@
                 <ToggleCell label="Carte" iconName="layers" active={blue.carte} showValue={false} accent={BLUE_ACCENT} disabled={red.carte} onClick={() => toggle("blue", "carte")} />
               </div>
             </div>
-            <div className="flex flex-col items-center pb-[max(env(safe-area-inset-bottom),16px)] pt-1">
+            <div className="flex flex-col items-center pt-1">
               <span className="text-[14px] font-extrabold tracking-[0.35em]" style={{ color: "#BFD3FA" }}>BLU</span>
             </div>
           </div>
