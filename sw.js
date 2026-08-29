@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cirulla-v15';
+const CACHE_NAME = 'cirulla-v16';
 const ASSETS = [
   './',
   './index.html',
