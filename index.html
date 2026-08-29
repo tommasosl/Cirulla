@@ -442,7 +442,7 @@
       return (
         <div className="fixed inset-0 flex flex-col overflow-hidden select-none touch-none">
           {/* ROSSO — Metà Superiore */}
-          <div className="relative flex-1 basis-1/2 flex flex-col overflow-hidden" style={{ background: `radial-gradient(ellipse at 50% 0%, ${RED_ACCENT} 0%, ${RED} 55%, #6E1219 100%)` }}>
+          <div className="relative flex-1 basis-1/2 flex flex-col overflow-hidden" style={{ background: `radial-gradient(ellipse at 50% 0%, ${RED_ACCENT} 0%, ${RED} 55%, #6E1219 100%)`, paddingTop: 'env(safe-area-inset-top)' }}>
             <div className="relative flex flex-col flex-1 w-full h-full" style={{ transform: "rotate(180deg)" }}>
               <div className="flex flex-col items-center" style={{ paddingTop: 76 }}>
                 <span className="cirulla-score leading-none" style={{ fontSize: "min(22vw, 108px)", color: "#FFF8EA" }}>{redScore}</span>
@@ -470,7 +470,6 @@
                 </div>
               </div>
               <div className="flex flex-col items-center pt-1" style={{ paddingBottom: 0 }}>
-                <span className="text-[14px] font-extrabold tracking-[0.35em]" style={{ color: "#FBE4C8" }}>ROSSO</span>
               </div>
             </div>
           </div>
@@ -503,7 +502,6 @@
               </div>
             </div>
             <div className="flex flex-col items-center pt-1">
-              <span className="text-[14px] font-extrabold tracking-[0.35em]" style={{ color: "#BFD3FA" }}>BLU</span>
             </div>
           </div>
 
