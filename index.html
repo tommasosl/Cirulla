@@ -67,7 +67,7 @@
 </head>
 <body class="bg-black text-white antialiased">
 
-  <div id="root" style="padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom);"></div>
+  <div id="root"></div>
 
   <script type="text/babel">
     const { useState, useRef, useCallback, useEffect } = React;
@@ -442,24 +442,23 @@
       return (
         <div className="fixed inset-0 flex flex-col overflow-hidden select-none touch-none">
           
-          {/* ROSSO — Metà Superiore (Specchio Blu) */}
+          {/* ROSSO — Metà Superiore */}
           <div className="relative flex-1 basis-1/2 flex flex-col overflow-hidden" style={{ background: `radial-gradient(ellipse at 50% 0%, ${RED_ACCENT} 0%, ${RED} 55%, #6E1219 100%)`, paddingTop: 'env(safe-area-inset-top)' }}>
             <div className="relative flex flex-col flex-1 w-full h-full" style={{ transform: "rotate(180deg)" }}>
-              {/* Punteggio Grande (Vicino al Centro/Fine Mano) */}
+              {/* Punteggio Rosso (in alto visivo, in basso logico per rotazione) */}
               <div className="flex flex-col items-center" style={{ paddingTop: 76 }}>
                 <span className="cirulla-score leading-none" style={{ fontSize: "min(22vw, 108px)", color: "#FFF8EA" }}>{redScore}</span>
               </div>
               
-              {/* Contatore Vittorie */}
+              {/* Vittorie Rosso */}
               <div className="absolute left-4 top-6 flex flex-col items-center">
                 <span className="text-[9px] font-bold tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.8)" }}>Vittorie</span>
                 <span className="cirulla-score leading-none" style={{ fontSize: 34, color: "#FFFFFF" }}>{vittorie.red}</span>
               </div>
 
-              {/* Spazio Vuoto che spinge i tasti verso il bordo */}
               <div className="flex-1" />
 
-              {/* Tasti (Vicino al Bordo Superiore/Dynamic Island) */}
+              {/* Tasti Rossi (in basso visivo) */}
               <div className="relative px-3 pb-1">
                 {popover === "red-piccola" && blue.piccola === 0 && (
                   <RunPopover title="Piccola" cards={PICCOLA_CARDS} value={red.piccola} onSelect={(v) => setPiccola("red", v)} onClose={() => setPopover(null)} accent={RED_ACCENT} openDir="up" />
@@ -481,25 +480,24 @@
             </div>
           </div>
 
-          {/* BLU — Metà Inferiore (ORA SPECCHIO ESATTO DEL ROSSO) */}
-          <div className="relative flex-1 basis-1/2 flex flex-col overflow-hidden" style={{ background: `radial-gradient(ellipse at 50% 100%, ${BLUE_ACCENT} 0%, ${BLUE} 55%, #0B1830 100%)`, paddingBottom: 'env(safe-area-inset-bottom)' }}>
+          {/* BLU — Metà Inferiore */}
+          <div className="relative flex-1 basis-1/2 flex flex-col overflow-hidden" style={{ background: `radial-gradient(ellipse at 50% 100%, ${BLUE_ACCENT} 0%, ${BLUE} 55%, #0B1830 100%)` }}>
             
-            {/* Punteggio Grande (Vicino al Centro/Fine Mano) */}
-            <div className="flex flex-col items-center" style={{ paddingTop: 76 }}>
+            {/* Punteggio Blu (subito dopo il centro, vicino al tasto Fine Mano) */}
+            <div className="flex flex-col items-center pt-1" style={{ paddingTop: 10 }}>
               <span className="cirulla-score leading-none" style={{ fontSize: "min(22vw, 108px)", color: "#EAF1FF" }}>{blueScore}</span>
             </div>
 
-            {/* Contatore Vittorie */}
+            {/* Vittorie Blu */}
             <div className="absolute right-4 top-6 flex flex-col items-center">
               <span className="text-[9px] font-bold tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.8)" }}>Vittorie</span>
               <span className="cirulla-score leading-none" style={{ fontSize: 34, color: "#FFFFFF" }}>{vittorie.blue}</span>
             </div>
 
-            {/* Spazio Vuoto che spinge i tasti verso il bordo inferiore */}
             <div className="flex-1" />
 
-            {/* Tasti (Vicino al Bordo Inferiore/Home Bar) */}
-            <div className="relative px-3 pb-1">
+            {/* Tasti Blu (in basso, con padding specifico per safe-area) */}
+            <div className="relative px-3 pb-1" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
               {popover === "blue-piccola" && red.piccola === 0 && (
                 <RunPopover title="Piccola" cards={PICCOLA_CARDS} value={blue.piccola} onSelect={(v) => setPiccola("blue", v)} onClose={() => setPopover(null)} accent={BLUE_ACCENT} openDir="up" />
               )}
@@ -516,7 +514,6 @@
                 <ToggleCell label="Carte" iconName="layers" active={blue.carte} showValue={false} accent={BLUE_ACCENT} disabled={red.carte} onClick={() => toggle("blue", "carte")} />
               </div>
             </div>
-            <div className="flex flex-col items-center pt-1" style={{ paddingBottom: 0 }}></div>
           </div>
 
           {/* Tasto Reset */}
