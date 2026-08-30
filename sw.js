@@ -1,5 +1,5 @@
 --- sw.js (原始)
-const CACHE_NAME = 'cirulla-v16';
+const CACHE_NAME = 'cirulla-v36';
 const ASSETS = [
   './',
   './index.html',
